@@ -1,15 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>صفحه وب بدون امکان Inspect</title>
+    <title>V2Ray Configurations</title>
     <style>
-        /* کد CSS آمده در اینجا به طور فشرده شده است */
-        .a{color:#333;display:block;text-decoration:none;width:100px;height:40px;line-height:40px;background-color:#f0f0f0;border:1px solid #ccc;text-align:center}.a:hover{background-color:#e0e0e0}
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 50px;
+        }
+
+        .config-box {
+            border: 1px solid #ccc;
+            padding: 20px;
+            margin-bottom: 20px;
+            width: 400px;
+        }
+
+        .config-box h2 {
+            margin-bottom: 10px;
+        }
     </style>
 </head>
+
 <body>
-    <a class="a" href="#">لینک</a>
+    <div class="config-box" id="configBox">
+        <h2>V2Ray Configurations</h2>
+        <!-- کانفینگ ها در اینجا قرار می‌گیرند -->
+    </div>
+
+    <div class="result-box">
+        <h2>نتیجه:</h2>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        // کانفینگ ها
+        var configurations = {
+            "config1": "محتوای کانفینگ 1",
+            "config2": "محتوای کانفینگ 2",
+            "config3": "محتوای کانفینگ 3"
+            // ادامه کانفینگ ها
+        };
+
+        // اسم کانفینگ ها را مشخص کرده و مرتب می‌کنیم
+        var configKeys = Object.keys(configurations).sort();
+
+        // نمایش کانفینگ ها در باکس مربوطه
+        var configBox = document.getElementById("configBox");
+        var resultDiv = document.getElementById("result");
+
+        configKeys.forEach(function (key) {
+            var configDiv = document.createElement("div");
+            configDiv.innerText = key + ": " + configurations[key];
+            configBox.appendChild(configDiv);
+        });
+
+        // نمایش نتیجه در باکس مربوطه
+        resultDiv.innerText = "کانفینگ ها مرتب شدند و نمایش داده شدند.";
+    </script>
 </body>
+
 </html>
